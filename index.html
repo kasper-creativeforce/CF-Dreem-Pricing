@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Force Pricing — Internal Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cf-blue: #2741f1; --cf-navy: #1b1a3d; --cf-bg: #f3f3f8; --cf-white: #ffffff;
+    --cf-light-blue: #e4e6f8; --cf-shadow: rgba(39,65,241,0.10) 0px 0px 40px 0px;
+    --cf-radius-card: 24px; --cf-radius-btn: 8px;
+    --dreem-bg: #060606; --dreem-surface: #121212; --dreem-elevated: #1a1a1a;
+    --dreem-border: #2b2b2b; --dreem-subtle: #414141;
+    --dreem-green-hex: #3ecf6e; --dreem-green-logo: #37CD7D;
+    --dreem-text: #fcfcfd; --dreem-text-muted: rgba(252,252,253,0.50);
+    --dreem-radius: 15px; --dreem-radius-btn: 7px;
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--cf-bg); color: var(--cf-navy); font-size: 16px; line-height: 1.6; }
+  .hero-wrapper { background: linear-gradient(180deg, #1b1a3d 0%, #040087 100%); }
+  .internal-banner { background: rgba(0,0,0,0.25); color: rgba(255,255,255,0.75); text-align: center; padding: 10px 20px; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .internal-banner span { color: #f5c842; margin-right: 6px; }
+  nav { background: transparent; padding: 20px 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); }
+  .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 17px; color: #fff; text-decoration: none; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 15px; }
+  .nav-links a.active { color: #fff; font-weight: 500; }
+  .nav-cta { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.25); border-radius: var(--cf-radius-btn); padding: 0.7em 1.6em; font-size: 14px; font-weight: 500; cursor: pointer; font-family: 'Inter', sans-serif; backdrop-filter: blur(8px); }
+  .nav-dreem-cta { display: inline-flex; align-items: center; gap: 7px; background: rgba(0,0,0,0.35); color: #fcfcfd; border: 1px solid rgba(62,207,110,0.45); border-radius: var(--cf-radius-btn); padding: 0.7em 1.4em; font-size: 14px; font-weight: 500; cursor: pointer; font-family: 'Space Grotesk', sans-serif; text-decoration: none; transition: all 0.2s; backdrop-filter: blur(8px); }
+  .nav-dreem-cta:hover { border-color: rgba(62,207,110,0.8); }
+  .pricing-hero { text-align: center; padding: 60px 60px 0; max-width: 1400px; margin: 0 auto; }
+  .eyebrow { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--cf-blue); margin-bottom: 16px; }
+  .pricing-hero .eyebrow { color: rgba(255,255,255,0.55); }
+  .pricing-hero h1 { font-size: 60px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 20px; color: #fff; }
+  .pricing-hero p { font-size: 19px; color: rgba(255,255,255,0.6); max-width: 560px; margin: 0 auto 20px; }
+  .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 960px; margin: 0 auto; }
+  .plan-card { background: #ffffff; border-radius: var(--cf-radius-card); box-shadow: 0 20px 60px rgba(0,0,0,0.30), 0 0 0 1px rgba(255,255,255,0.15); padding: 36px; position: relative; color: var(--cf-navy); }
+  .plan-label { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--cf-blue); margin-bottom: 8px; }
+  .plan-card h2 { font-size: 28px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 6px; color: var(--cf-navy); }
+  .plan-tagline { font-size: 14px; color: rgba(27,26,61,0.55); margin-bottom: 24px; }
+  .plan-price .amount { font-size: 42px; font-weight: 700; letter-spacing: -0.03em; color: var(--cf-navy); }
+  .plan-price-note { font-size: 12px; color: rgba(27,26,61,0.45); margin-bottom: 20px; margin-top: 4px; }
+  .dreem-callout { background: #0a0a0a; border: 1px solid var(--dreem-border); border-radius: 14px; padding: 16px 18px; margin: 20px 0; position: relative; overflow: hidden; }
+  .dreem-callout::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--dreem-green-hex), transparent); }
+  .dreem-callout-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .dreem-callout-title { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; color: var(--dreem-text); }
+  .dreem-callout-badge { background: var(--dreem-green-hex); color: #060606; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; margin-left: auto; font-family: 'Space Grotesk', sans-serif; }
+  .dreem-callout p { font-size: 12.5px; color: var(--dreem-text-muted); line-height: 1.5; font-family: 'Inter', sans-serif; }
+  .dreem-callout .credit-amount { color: var(--dreem-green-hex); font-weight: 600; }
+  .plan-btn { display: block; width: 100%; text-align: center; padding: 13px; border-radius: var(--cf-radius-btn); font-size: 15px; font-weight: 500; cursor: pointer; text-decoration: none; margin-top: 8px; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+  .plan-btn-primary { background: var(--cf-blue); color: white; border: none; }
+  .plan-features { margin-top: 24px; }
+  .plan-features h4 { font-size: 12px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(27,26,61,0.4); margin-bottom: 12px; }
+  .plan-features ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .plan-features li { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; color: rgba(27,26,61,0.75); }
+  .plan-features li::before { content: ''; display: inline-block; width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; background-color: var(--cf-blue); -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960'%3E%3Cpath d='M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960'%3E%3Cpath d='M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z'/%3E%3C/svg%3E"); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; }
+  .ai-section { background: #060606; padding: 80px 0 0; margin: 0; }
+  .ai-section .inner { max-width: 1400px; margin: 0 auto; padding: 0 60px; }
+  .ai-section .eyebrow { color: var(--dreem-green-hex); font-family: 'Space Grotesk', sans-serif; }
+  .ai-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: 46px; font-weight: 600; letter-spacing: -0.02em; color: var(--dreem-text); margin-bottom: 14px; }
+  .ai-section .subtitle { font-size: 18px; color: var(--dreem-text-muted); max-width: 600px; margin-bottom: 48px; }
+  .ai-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+  .ai-card { background: var(--dreem-surface); border: 1px solid var(--dreem-border); border-radius: var(--dreem-radius); padding: 24px; transition: border-color 0.25s; }
+  .ai-card:hover { border-color: var(--dreem-subtle); }
+  .ai-card-status { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; display: inline-flex; align-items: center; gap: 5px; }
+  .ai-card-status.live { color: var(--dreem-green-hex); }
+  .ai-card-status.live::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--dreem-green-hex); display: block; }
+  .ai-card-status.dev { color: var(--dreem-text-muted); }
+  .ai-card-status.dev::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--dreem-subtle); display: block; }
+  .ai-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; color: var(--dreem-text); margin-bottom: 8px; }
+  .ai-card p { font-size: 13px; color: var(--dreem-text-muted); line-height: 1.55; margin-bottom: 16px; }
+  .ai-card-price { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: var(--dreem-text); }
+  .ai-card-price span { font-size: 13px; font-weight: 400; color: var(--dreem-text-muted); }
+  .ai-card-divider { border: none; border-top: 1px solid var(--dreem-border); margin: 16px 0; }
+  .credit-detail { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--dreem-text-muted); }
+  .credit-detail strong { color: var(--dreem-text); font-weight: 500; }
+  .topup-section { background: #060606; padding: 0 0 80px; }
+  .topup-section .inner { max-width: 1400px; margin: 0 auto; padding: 0 60px; }
+  .addons-section { background: #f3f3f8; padding: 80px 60px; }
+  .addons-inner { max-width: 1400px; margin: 0 auto; }
+  .section-header { margin-bottom: 40px; }
+  .section-header h2 { font-size: 40px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px; color: var(--cf-navy); }
+  .section-header p { font-size: 17px; color: rgba(27,26,61,0.6); max-width: 520px; }
+  .section-header .eyebrow { color: var(--cf-blue); }
+  .addons-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+  .addon-card { background: var(--cf-white); border-radius: var(--cf-radius-card); box-shadow: 0 8px 40px rgba(0,0,0,0.08); padding: 28px; }
+  .addon-tag { display: inline-block; background: var(--cf-light-blue); color: var(--cf-blue); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; margin-bottom: 14px; }
+  .addon-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+  .addon-card p { font-size: 14px; color: rgba(27,26,61,0.6); line-height: 1.55; margin-bottom: 16px; }
+  .addon-card ul { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+  .addon-card li { display: flex; align-items: flex-start; gap: 6px; font-size: 13px; color: rgba(27,26,61,0.7); }
+  .addon-card li::before { content: '–'; color: var(--cf-blue); flex-shrink: 0; }
+  .addon-link { color: var(--cf-blue); font-size: 13px; font-weight: 500; text-decoration: none; border-bottom: 1px solid rgba(39,65,241,0.25); }
+  .compare-section { background: #f3f3f8; padding: 80px 0; }
+  .compare-section-inner { max-width: 1400px; margin: 0 auto; padding: 0 60px; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .compare-table thead tr th { padding: 24px 28px 20px; vertical-align: bottom; }
+  .compare-table thead tr th:first-child { background: #f3f3f8; text-align: left; }
+  .col-core-header { background: #ffffff; border-radius: 16px 16px 0 0; text-align: center; box-shadow: rgba(39,65,241,0.08) 0 -4px 20px 0; }
+  .col-ent-header { background: transparent; text-align: center; }
+  .col-header-label { font-size: 12px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(27,26,61,0.4); margin-bottom: 6px; }
+  .col-header-price { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: var(--cf-navy); }
+  .col-header-price small { font-size: 13px; font-weight: 400; color: rgba(27,26,61,0.45); }
+  .compare-table td { padding: 14px 28px; border-bottom: 1px solid rgba(27,26,61,0.07); color: var(--cf-navy); font-size: 14px; }
+  .compare-table td:first-child { color: rgba(27,26,61,0.8); }
+  .compare-table td.td-core { background: #ffffff; text-align: center; box-shadow: rgba(39,65,241,0.06) 4px 0 12px -4px, rgba(39,65,241,0.06) -4px 0 12px -4px; }
+  .compare-table td.td-ent { background: transparent; text-align: center; }
+  .compare-table .category-row td { background: transparent; font-weight: 600; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(27,26,61,0.4); padding: 24px 28px 8px; border-bottom: none; }
+  .compare-table .category-row td.td-core { background: #ffffff; border-bottom: none; }
+  /* dreem row overrides consolidated above */
+  /* ── DREEM TABLE BLOCK — all cells forced dark ── */
+  .dreem-header-row td { background: #060606 !important; box-shadow: none !important; border-bottom: none !important; padding: 28px 28px 16px !important; }
+  .dreem-header-row td.td-core { background: #060606 !important; }
+  .dreem-row td { background: #060606 !important; border-bottom: 1px solid #1e1e1e !important; color: #fcfcfd !important; box-shadow: none !important; }
+  .dreem-row td:first-child { color: rgba(252,252,253,0.75) !important; }
+  .dreem-row td.td-core { background: #111111 !important; box-shadow: none !important; border-bottom: 1px solid #1e1e1e !important; }
+  .dreem-row td.td-ent { background: #060606 !important; box-shadow: none !important; }
+  .dreem-end-row td { background: #060606 !important; padding-bottom: 28px !important; border-bottom: 2px solid rgba(39,65,241,0.15) !important; box-shadow: none !important; }
+  .dreem-end-row td.td-core { background: #111111 !important; box-shadow: none !important; }
+
+    .check { display: inline-flex; align-items: center; justify-content: center; }
+  .cross { color: rgba(27,26,61,0.2); font-size: 18px; }
+  .dreem-row .cross { color: rgba(252,252,253,0.2); }
+  .credit-tag { display: inline-block; background: rgba(62,207,110,0.12); color: #3ecf6e; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 6px; font-family: 'Space Grotesk', sans-serif; border: 1px solid rgba(62,207,110,0.25); }
+  .new-tag { display: inline-block; background: var(--cf-blue); color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; vertical-align: middle; margin-left: 6px; }
+  .dev-tag { display: inline-block; background: rgba(252,252,253,0.08); color: rgba(252,252,253,0.35); font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; vertical-align: middle; margin-left: 6px; }
+  .faq-section { background: #f3f3f8; padding: 80px 60px; }
+  .faq-inner { max-width: 860px; margin: 0 auto; }
+  .faq-inner h2 { font-size: 40px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .faq-inner > p { font-size: 17px; color: rgba(27,26,61,0.6); margin-bottom: 48px; }
+  .faq-item { border-bottom: 1px solid rgba(27,26,61,0.08); padding: 24px 0; cursor: pointer; }
+  .faq-item:first-of-type { border-top: 1px solid rgba(27,26,61,0.08); }
+  .faq-question { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+  .faq-question h3 { font-size: 16px; font-weight: 600; color: var(--cf-navy); }
+  .faq-toggle { color: var(--cf-blue); font-size: 20px; flex-shrink: 0; font-weight: 300; transition: transform 0.2s; }
+  .faq-answer { font-size: 15px; color: rgba(27,26,61,0.65); line-height: 1.65; margin-top: 14px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .faq-item.open .faq-answer { max-height: 300px; }
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+  .footer-cta { background: linear-gradient(115deg, var(--cf-navy), #040087, var(--cf-blue)); padding: 80px 60px; text-align: center; color: white; }
+  .footer-cta h2 { font-size: 46px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 16px; }
+  .footer-cta p { font-size: 18px; color: rgba(255,255,255,0.65); margin-bottom: 32px; }
+  .footer-cta-btns { display: flex; gap: 12px; justify-content: center; }
+  .btn-white { background: white; color: var(--cf-navy); border: none; border-radius: var(--cf-radius-btn); padding: 14px 28px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; }
+  .btn-ghost-white { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.25); border-radius: var(--cf-radius-btn); padding: 14px 28px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: 'Inter', sans-serif; }
+
+  /* SVG check shorthand */
+  .chk-blue, .chk-green { display: inline-flex; vertical-align: middle; }
+
+  /* ── CREDIT INFO PANEL ── */
+  .credit-info { display: inline-flex; align-items: center; gap: 6px; position: relative; }
+  .credit-info-icon { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; border: 1px solid rgba(62,207,110,0.4); color: rgba(62,207,110,0.7); font-size: 10px; font-weight: 700; font-family: 'Space Grotesk', sans-serif; cursor: pointer; flex-shrink: 0; line-height: 1; transition: all 0.2s; user-select: none; }
+  .credit-info-icon:hover, .credit-info-icon.active { border-color: #3ecf6e; color: #3ecf6e; background: rgba(62,207,110,0.08); }
+
+  /* Overlay */
+  .credit-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 200; opacity: 0; pointer-events: none; transition: opacity 0.2s; backdrop-filter: blur(4px); }
+  .credit-overlay.open { opacity: 1; pointer-events: auto; }
+
+  /* Panel */
+  .credit-panel { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -48%); width: 480px; background: #111111; border: 1px solid #2b2b2b; border-radius: 20px; z-index: 201; opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; overflow: hidden; }
+  .credit-panel.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%); }
+  .credit-panel-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 24px 24px 0; }
+  .credit-panel-header-left { display: flex; align-items: center; gap: 10px; }
+  .credit-panel-close { width: 28px; height: 28px; border-radius: 50%; background: rgba(252,252,253,0.07); border: none; color: rgba(252,252,253,0.5); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.15s; }
+  .credit-panel-close:hover { background: rgba(252,252,253,0.12); color: #fcfcfd; }
+  .credit-panel-eyebrow { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; color: #3ecf6e; letter-spacing: 0.07em; text-transform: uppercase; }
+  .credit-panel-title { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: #fcfcfd; letter-spacing: -0.01em; margin-top: 4px; }
+  .credit-panel-body { padding: 16px 24px 24px; }
+  .credit-panel-desc { font-size: 13px; color: rgba(252,252,253,0.5); line-height: 1.65; margin-bottom: 20px; }
+
+  /* Output table */
+  .credit-output-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+  .credit-output-table thead th { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: rgba(252,252,253,0.25); padding: 0 0 8px; text-align: left; border-bottom: 1px solid #1e1e1e; }
+  .credit-output-table thead th:not(:first-child) { text-align: right; }
+  .credit-output-table tbody td { padding: 11px 0; border-bottom: 1px solid #1a1a1a; font-size: 13px; color: rgba(252,252,253,0.65); vertical-align: middle; }
+  .credit-output-table tbody tr:last-child td { border-bottom: none; }
+  .credit-output-table tbody td:not(:first-child) { text-align: right; }
+  .credit-output-table .td-credits { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; color: rgba(252,252,253,0.4); }
+  .credit-output-table .td-cost { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; color: #3ecf6e; }
+  .credit-output-table .td-output { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; color: #fcfcfd; }
+  .credit-panel-footer { background: #0e1a14; border-top: 1px solid rgba(62,207,110,0.15); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .credit-panel-footer p { font-size: 12px; color: rgba(252,252,253,0.35); line-height: 1.5; }
+  .credit-panel-footer strong { color: rgba(252,252,253,0.6); }
+</style>
+</head>
+<body>
+
+<div class="hero-wrapper">
+<div class="internal-banner"><span>🔒</span> Internal Draft · Not Customer-Facing · Version C (Hybrid) · March 2026</div>
+<nav>
+  <a class="nav-logo" href="#">
+    <svg width="32" height="32" viewBox="0 0 584 584" fill="none"><rect width="584" height="584" rx="40" fill="#1B1A3D"/><path d="M303.977 141.1C348.344 141.1 390.373 160.318 419.288 193.828C448.204 227.338 460.137 270.4 454.982 313.462C449.827 351.431 432.725 386.237 406.843 412.65C380.961 439.063 347.3 455.115 311.551 457.694C275.802 460.272 240.053 449.368 212.097 427.077L263.052 369.131C278.6 381.585 298.304 388.334 318.525 387.815C338.745 387.297 358.108 379.514 372.791 366.017C387.474 352.52 396.574 334.201 398.451 314.499C400.329 294.796 394.866 275.094 383.12 259.042C371.373 243.507 354.27 232.862 335.085 228.725C315.899 224.588 295.679 227.166 278.059 235.986L249.585 172.87C267.205 160.935 287.425 147.957 303.977 141.1Z" fill="white" stroke="white" stroke-width="1.8"/></svg>
+    Creative Force
+  </a>
+  <div class="nav-links">
+    <a href="#">Product</a><a href="#">Solutions</a><a href="#">Customers</a>
+    <a href="#" class="active">Pricing</a><a href="#">Resources</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a href="https://dreem.ai" target="_blank" class="nav-dreem-cta">
+      <svg width="14" height="14" viewBox="0 0 584 584" fill="none"><rect width="584" height="584" rx="40" fill="black"/><path d="M391.914 392.882C362.869 421.948 327.082 437 286.108 437H158V221.602L239.429 137H286.108C327.082 137 362.869 151.533 391.914 181.118C420.959 210.183 436 245.997 436 287.519C436 329.042 421.478 363.817 391.914 392.882ZM247.728 229.907V344.093H289.739C305.817 344.093 318.784 338.384 330.194 327.484C341.604 316.066 346.791 303.09 346.791 287C346.791 270.91 341.604 257.934 330.194 246.516C318.784 235.097 305.817 229.907 289.739 229.907C289.739 229.907 248.246 229.907 247.728 229.907ZM236.317 156.723L177.19 218.488H236.317V157.242V156.723ZM236.317 229.907H169.41V417.277L236.317 347.727V229.907ZM383.616 188.903C356.646 161.913 323.97 148.419 286.108 148.419H247.728V218.488H289.22C307.892 218.488 324.489 225.235 337.455 238.73C350.94 252.225 357.683 268.315 357.683 287.519C357.683 306.723 350.94 322.813 337.455 335.789C323.97 348.765 307.892 356.031 289.22 356.031H244.097L177.19 426.1H286.108C323.97 412.606 356.646 412.606 383.616 385.616C410.586 358.626 424.071 325.927 424.071 288.038C424.071 250.149 410.586 215.893 383.616 188.903Z" fill="#37CD7D"/></svg>
+      Explore Dreem
+    </a>
+    <button class="nav-cta">Talk to sales</button>
+  </div>
+</nav>
+
+<div class="pricing-hero">
+  <p class="eyebrow">Pricing</p>
+  <h1>Choose the best plan<br>for your business</h1>
+  <p>Find the perfect plan tailored to your organization's production volume and needs.</p>
+</div>
+
+<div style="padding:48px 60px 80px;max-width:1400px;margin:0 auto">
+<div class="plans-grid">
+  <!-- Core -->
+  <div class="plan-card">
+    <div class="plan-label">For growing in-house teams</div>
+    <h2>Core</h2>
+    <p class="plan-tagline">Start with the essentials and scale as production grows.</p>
+    <div class="plan-price"><span class="amount">$3,165</span></div>
+    <div class="plan-price-note">Platform fee + asset volume · Billed annually</div>
+    <div class="dreem-callout">
+      <div class="dreem-callout-header">
+        <svg width="20" height="20" viewBox="0 0 584 584" fill="none"><rect width="584" height="584" rx="40" fill="black"/><path d="M391.914 392.882C362.869 421.948 327.082 437 286.108 437H158V221.602L239.429 137H286.108C327.082 137 362.869 151.533 391.914 181.118C420.959 210.183 436 245.997 436 287.519C436 329.042 421.478 363.817 391.914 392.882ZM247.728 229.907V344.093H289.739C305.817 344.093 318.784 338.384 330.194 327.484C341.604 316.066 346.791 303.09 346.791 287C346.791 270.91 341.604 257.934 330.194 246.516C318.784 235.097 305.817 229.907 289.739 229.907C289.739 229.907 248.246 229.907 247.728 229.907ZM236.317 156.723L177.19 218.488H236.317V157.242V156.723ZM236.317 229.907H169.41V417.277L236.317 347.727V229.907ZM383.616 188.903C356.646 161.913 323.97 148.419 286.108 148.419H247.728V218.488H289.22C307.892 218.488 324.489 225.235 337.455 238.73C350.94 252.225 357.683 268.315 357.683 287.519C357.683 306.723 350.94 322.813 337.455 335.789C323.97 348.765 307.892 356.031 289.22 356.031H244.097L177.19 426.1H286.108C323.97 412.606 356.646 412.606 383.616 385.616C410.586 358.626 424.071 325.927 424.071 288.038C424.071 250.149 410.586 215.893 383.616 188.903Z" fill="#37CD7D"/></svg>
+        <span class="dreem-callout-title">500 Dreem AI credits / mo</span>
+        <span class="dreem-callout-badge">Included</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:2px">
+          <p style="font-size:12px;color:rgba(252,252,253,0.5);line-height:1.5;margin:0">500 credits included per month.</p>
+          <div class="credit-info">
+          <span class="credit-info-icon" onclick="document.getElementById('creditPanel').classList.toggle('open');document.getElementById('creditOverlay').classList.toggle('open');this.classList.toggle('active')">i</span>
+        </div>
+        </div>
+    </div>
+    <a href="#" class="plan-btn plan-btn-primary">Get a quote</a>
+    <div class="plan-features">
+      <h4>Key features</h4>
+      <ul>
+        <li>Unlimited Users</li><li>Data Sources</li><li>Workflow Logic &amp; Alerts</li>
+        <li>Styling &amp; Outfitting</li><li>Mobile Application</li><li>Planning Calendar</li>
+        <li>Capture One® Integration</li><li>Adobe Photoshop® Integration</li>
+        <li>24/5 In-App Chat Support</li><li>2FA &amp; SSO</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Enterprise -->
+  <div class="plan-card">
+    <div class="plan-label">For large-scale operations</div>
+    <h2>Enterprise</h2>
+    <p class="plan-tagline">Unlock advanced workflows, deep integrations, and hands-on support.</p>
+    <div class="plan-price"><span class="amount">Custom</span></div>
+    <div class="plan-price-note">Billed annually</div>
+    <div class="dreem-callout">
+      <div class="dreem-callout-header">
+        <svg width="20" height="20" viewBox="0 0 584 584" fill="none"><rect width="584" height="584" rx="40" fill="black"/><path d="M391.914 392.882C362.869 421.948 327.082 437 286.108 437H158V221.602L239.429 137H286.108C327.082 137 362.869 151.533 391.914 181.118C420.959 210.183 436 245.997 436 287.519C436 329.042 421.478 363.817 391.914 392.882ZM247.728 229.907V344.093H289.739C305.817 344.093 318.784 338.384 330.194 327.484C341.604 316.066 346.791 303.09 346.791 287C346.791 270.91 341.604 257.934 330.194 246.516C318.784 235.097 305.817 229.907 289.739 229.907C289.739 229.907 248.246 229.907 247.728 229.907ZM236.317 156.723L177.19 218.488H236.317V157.242V156.723ZM236.317 229.907H169.41V417.277L236.317 347.727V229.907ZM383.616 188.903C356.646 161.913 323.97 148.419 286.108 148.419H247.728V218.488H289.22C307.892 218.488 324.489 225.235 337.455 238.73C350.94 252.225 357.683 268.315 357.683 287.519C357.683 306.723 350.94 322.813 337.455 335.789C323.97 348.765 307.892 356.031 289.22 356.031H244.097L177.19 426.1H286.108C323.97 412.606 356.646 412.606 383.616 385.616C410.586 358.626 424.071 325.927 424.071 288.038C424.071 250.149 410.586 215.893 383.616 188.903Z" fill="#37CD7D"/></svg>
+        <span class="dreem-callout-title">Custom Dreem AI credit allocation</span>
+        <span class="dreem-callout-badge">Enterprise</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:2px">
+          <p style="font-size:12px;color:rgba(252,252,253,0.5);line-height:1.5;margin:0">Custom credit volume, matched to your scale.</p>
+          <div class="credit-info">
+          <span class="credit-info-icon" onclick="document.getElementById('creditPanel').classList.toggle('open');document.getElementById('creditOverlay').classList.toggle('open');this.classList.toggle('active')">i</span>
+        </div>
+        </div>
+    </div>
+    <a href="#" class="plan-btn plan-btn-primary">Talk to sales</a>
+    <div class="plan-features">
+      <h4>Everything in Core, plus</h4>
+      <ul>
+        <li>Multiple Workspaces</li><li>Talent Resourcing &amp; Booking</li>
+        <li>Conditional Style Guide Positions</li><li>Conditional &amp; Variant-Specific Metadata</li>
+        <li>AI Cloud Automation</li><li>Custom Reporting &amp; Data Analyst Access</li>
+        <li>Dedicated Account Team</li><li>Onsite Onboarding</li>
+        <li>Custom Virtual Talent &amp; Wardrobe</li><li>4K Virtual Model Resolution</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+</div><!-- /hero-wrapper -->
+
+<!-- AI Section -->
+<div class="ai-section">
+  <div class="inner">
+    <p class="eyebrow">AI Content Generation · Powered by Dreem</p>
+    <h2>Elevate your studio with<br>AI-powered innovations</h2>
+    <p class="subtitle">Generate virtual content at a fraction of the cost of traditional photography — right inside your Creative Force workflow.</p>
+    <div class="ai-grid">
+      <div class="ai-card">
+        <div class="ai-card-status live">Live</div>
+        <h3>Virtual Models</h3>
+        <p>Generate on-model product images with 400+ virtual talent options. No physical samples, no studio booking.</p>
+        <div class="ai-card-price">$0.66 <span>/ image (2K)</span></div>
+        <hr class="ai-card-divider">
+        <div class="credit-detail"><span>Credits per image</span><strong>11 credits</strong></div>
+        <div class="credit-detail" style="margin-top:4px"><span>vs. traditional</span><strong style="color:#3ecf6e">92x cheaper</strong></div>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-status live">Live</div>
+        <h3>Packshots</h3>
+        <p>Create product images on clean backgrounds instantly. Perfect for catalog consistency at scale.</p>
+        <div class="ai-card-price">$0.48 <span>/ image (2K)</span></div>
+        <hr class="ai-card-divider">
+        <div class="credit-detail"><span>Credits per image</span><strong>8 credits</strong></div>
+        <div class="credit-detail" style="margin-top:4px"><span>vs. traditional</span><strong style="color:#3ecf6e">52x–167x cheaper</strong></div>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-status live">Live</div>
+        <h3>Image-to-Video</h3>
+        <p>Transform any product image into a 5 or 10-second product video. No video crew required.</p>
+        <div class="ai-card-price">$0.60 <span>/ 5s video</span></div>
+        <hr class="ai-card-divider">
+        <div class="credit-detail"><span>Credits per 5s video</span><strong>10 credits</strong></div>
+        <div class="credit-detail" style="margin-top:4px"><span>vs. traditional</span><strong style="color:#3ecf6e">833x cheaper</strong></div>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-status live">Live</div>
+        <h3>Image Refining</h3>
+        <p>AI-powered touch-ups and adjustments for quick post-production edits without leaving the platform.</p>
+        <div class="ai-card-price">$0.24 <span>/ edit</span></div>
+        <hr class="ai-card-divider">
+        <div class="credit-detail"><span>Credits per edit</span><strong>4 credits</strong></div>
+        <div class="credit-detail" style="margin-top:4px"><span>Instant post-production</span><strong style="color:#3ecf6e">No outsourcing</strong></div>
+      </div>
+    </div>
+    <div class="ai-grid" style="margin-top:12px">
+      <div class="ai-card" style="grid-column:1/2;opacity:0.5">
+        <div class="ai-card-status dev">In development</div>
+        <h3>Color Variations</h3>
+        <p>Produce accurate and consistent color variations across your product catalog automatically.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Credit Capacity Section -->
+<div class="topup-section">
+  <div class="inner">
+    <div style="padding:80px 0;border-top:1px solid #1e1e1e">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:60px;margin-bottom:48px">
+        <div>
+          <p style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#3ecf6e;margin-bottom:12px">AI Credit Capacity</p>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:600;color:#fcfcfd;letter-spacing:-0.02em;line-height:1.15;margin:0">Scale your AI output<br>without limits</h2>
+        </div>
+        <p style="font-size:15px;color:rgba(252,252,253,0.45);line-height:1.7;max-width:460px;flex-shrink:0;text-align:right">Need more virtual production capacity? Your account team can increase your credit volume instantly — no paperwork, no downtime, no renegotiation.</p>
+      </div>
+      <div style="border:1px solid #1e1e1e;border-radius:16px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:2fr 1.2fr 1fr 1.8fr;background:#111111;border-bottom:1px solid #1e1e1e;padding:14px 28px">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(252,252,253,0.3)">Credit block</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(252,252,253,0.3)">Annual rate</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(252,252,253,0.3)">Per credit</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(252,252,253,0.3)">Equivalent output</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 1.2fr 1fr 1.8fr;padding:20px 28px;border-bottom:1px solid #1a1a1a;align-items:center">
+          <div><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:#fcfcfd">500 credits / mo</div><div style="font-size:12px;color:rgba(252,252,253,0.3);margin-top:3px">Entry-level expansion</div></div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#fcfcfd">$59<span style="font-size:13px;font-weight:400;color:rgba(252,252,253,0.3)"> / mo</span></div>
+          <div style="font-size:14px;color:rgba(252,252,253,0.5)">$0.12</div>
+          <div style="font-size:13px;color:rgba(252,252,253,0.4);line-height:1.6">≈ 45 on-model images · 62 packshots</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 1.2fr 1fr 1.8fr;padding:20px 28px;border-bottom:1px solid #1a1a1a;align-items:center;background:#0e1a14;border-left:2px solid #3ecf6e">
+          <div>
+            <div style="display:flex;align-items:center;gap:10px"><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:#fcfcfd">2,000 credits / mo</div><span style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;background:#3ecf6e;color:#060606;padding:2px 8px;border-radius:4px">Most common</span></div>
+            <div style="font-size:12px;color:rgba(252,252,253,0.3);margin-top:3px">Suitable for mid-scale virtual production</div>
+          </div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#fcfcfd">$199<span style="font-size:13px;font-weight:400;color:rgba(252,252,253,0.3)"> / mo</span></div>
+          <div style="font-size:14px;color:#3ecf6e;font-weight:500">$0.10</div>
+          <div style="font-size:13px;color:rgba(252,252,253,0.4);line-height:1.6">≈ 181 on-model images · 250 packshots</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 1.2fr 1fr 1.8fr;padding:20px 28px;border-bottom:1px solid #1a1a1a;align-items:center">
+          <div><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:#fcfcfd">10,000 credits / mo</div><div style="font-size:12px;color:rgba(252,252,253,0.3);margin-top:3px">High-volume catalog production</div></div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#fcfcfd">$899<span style="font-size:13px;font-weight:400;color:rgba(252,252,253,0.3)"> / mo</span></div>
+          <div style="font-size:14px;color:rgba(252,252,253,0.5)">$0.09</div>
+          <div style="font-size:13px;color:rgba(252,252,253,0.4);line-height:1.6">≈ 909 on-model images · 1,250 packshots</div>
+        </div>
+        <div style="display:grid;grid-template-columns:2fr 1.2fr 1fr 1.8fr;padding:20px 28px;align-items:center">
+          <div><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:#fcfcfd">50,000 credits / mo</div><div style="font-size:12px;color:rgba(252,252,253,0.3);margin-top:3px">Enterprise-scale virtual production</div></div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#fcfcfd">$4,199<span style="font-size:13px;font-weight:400;color:rgba(252,252,253,0.3)"> / mo</span></div>
+          <div style="font-size:14px;color:rgba(252,252,253,0.5)">$0.08</div>
+          <div style="font-size:13px;color:rgba(252,252,253,0.4);line-height:1.6">≈ 4,545 on-model images · 6,250 packshots</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-top:24px;gap:40px">
+        <p style="font-size:13px;color:rgba(252,252,253,0.3);line-height:1.6;max-width:580px">Credits are billed as part of your annual plan. Unused credits carry over for one billing cycle. Volume above 50,000 credits per month is available at custom rates — contact your account team.</p>
+        <a href="#" style="flex-shrink:0;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:#fcfcfd;text-decoration:none;border:1px solid #2b2b2b;padding:10px 20px;border-radius:8px;white-space:nowrap">Talk to your account team →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add-ons -->
+<div class="addons-section">
+  <div class="addons-inner">
+    <div class="section-header">
+      <p class="eyebrow">Add-ons</p>
+      <h2>Expand your capabilities</h2>
+      <p>Purpose-built extensions to keep your content production on track.</p>
+    </div>
+    <div class="addons-grid">
+      <div class="addon-card"><div class="addon-tag">Add-on</div><h3>Copywriting</h3><p>Streamline the copywriting process and maintain brand consistency with an AI-powered workspace.</p><ul><li>AI-assisted copy generation</li><li>Auto-filled product data fields</li><li>Built-in QC and approval workflows</li></ul><a href="#" class="addon-link">Read more →</a></div>
+      <div class="addon-card"><div class="addon-tag">Add-on</div><h3>Video</h3><p>Speed up video production from task assignment to final delivery with smart automation.</p><ul><li>Automated file handling</li><li>Premiere Pro integration</li><li>Built-in review + automated QC</li></ul><a href="#" class="addon-link">Read more →</a></div>
+      <div class="addon-card"><div class="addon-tag">Add-on</div><h3>Vendor Content</h3><p>Manage vendor-provided assets from initial request to final upload consistently and efficiently.</p><ul><li>Vendors upload directly in portal</li><li>Visual style guides and standards</li><li>Approvals for faster turnaround</li></ul><a href="#" class="addon-link">Read more →</a></div>
+      <div class="addon-card"><div class="addon-tag">Add-on</div><h3>Editorial Projects</h3><p>Control every step of your editorial projects — from planning to final approvals.</p><ul><li>Centralized editorial assets</li><li>Real-time collaboration</li><li>Track progress and milestones</li></ul><a href="#" class="addon-link">Read more →</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- Compare Table -->
+<div class="compare-section" id="compare-plans">
+<div class="compare-section-inner">
+  <div class="section-header">
+    <p class="eyebrow">Compare plans</p>
+    <h2>Everything side by side</h2>
+  </div>
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th style="width:50%;background:#f3f3f8"></th>
+        <th class="col-core-header"><div class="col-header-label">Core</div><div class="col-header-price">$3,165<small>/mo</small></div></th>
+        <th class="col-ent-header"><div class="col-header-label">Enterprise</div><div class="col-header-price">Custom</div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="category-row"><td>Platform</td><td class="td-core"></td><td class="td-ent"></td></tr>
+      <tr><td>Flow Production</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Cloud Platform &amp; Storage</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Production DAM</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Auto Variants</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Conditional Workflow Rules</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Derived Workflows <span class="new-tag">NEW</span></td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>AI Cloud Automation <span class="new-tag">NEW</span></td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr class="category-row"><td>Planning &amp; Sample Management</td><td class="td-core"></td><td class="td-ent"></td></tr>
+      <tr><td>Planning Calendar &amp; Swimlanes</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Sample Check-In / Check-Out</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Talent Resourcing &amp; Booking <span class="new-tag">NEW</span></td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+
+      <!-- Dreem AI Block -->
+      <tr class="dreem-header-row">
+        <td style="padding:28px 28px 16px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <svg width="20" height="20" viewBox="0 0 584 584" fill="none"><rect width="584" height="584" rx="40" fill="black"/><path d="M391.914 392.882C362.869 421.948 327.082 437 286.108 437H158V221.602L239.429 137H286.108C327.082 137 362.869 151.533 391.914 181.118C420.959 210.183 436 245.997 436 287.519C436 329.042 421.478 363.817 391.914 392.882ZM247.728 229.907V344.093H289.739C305.817 344.093 318.784 338.384 330.194 327.484C341.604 316.066 346.791 303.09 346.791 287C346.791 270.91 341.604 257.934 330.194 246.516C318.784 235.097 305.817 229.907 289.739 229.907C289.739 229.907 248.246 229.907 247.728 229.907ZM236.317 156.723L177.19 218.488H236.317V157.242V156.723ZM236.317 229.907H169.41V417.277L236.317 347.727V229.907ZM383.616 188.903C356.646 161.913 323.97 148.419 286.108 148.419H247.728V218.488H289.22C307.892 218.488 324.489 225.235 337.455 238.73C350.94 252.225 357.683 268.315 357.683 287.519C357.683 306.723 350.94 322.813 337.455 335.789C323.97 348.765 307.892 356.031 289.22 356.031H244.097L177.19 426.1H286.108C323.97 412.606 356.646 412.606 383.616 385.616C410.586 358.626 424.071 325.927 424.071 288.038C424.071 250.149 410.586 215.893 383.616 188.903Z" fill="#37CD7D"/></svg>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#fcfcfd">AI Content Generation</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(252,252,253,0.4)">· Powered by Dreem</span>
+            <span style="background:#3ecf6e;color:#060606;font-size:10px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;padding:2px 8px;border-radius:4px;font-family:'Space Grotesk',sans-serif;margin-left:4px">NEW</span>
+          </div>
+        </td>
+        <td class="td-core" style="background:#111111 !important"></td>
+        <td class="td-ent" style="background:#060606"></td>
+      </tr>
+      <tr class="dreem-row"><td>Workflow AI Automation</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td></tr>
+      <tr class="dreem-row"><td>Product Tagging</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td></tr>
+      <tr class="dreem-row"><td>Label Recognition</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td></tr>
+      <tr class="dreem-row"><td>Virtual Models (2K)</td><td class="td-core"><span class="credit-tag">500 credits/mo</span></td><td class="td-ent"><span class="credit-tag">Custom allocation</span></td></tr>
+      <tr class="dreem-row"><td>Virtual Models (4K)</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td></tr>
+      <tr class="dreem-row"><td>Packshots</td><td class="td-core"><span class="credit-tag">500 credits/mo</span></td><td class="td-ent"><span class="credit-tag">Custom allocation</span></td></tr>
+      <tr class="dreem-row"><td>Image-to-Video</td><td class="td-core"><span class="credit-tag">500 credits/mo</span></td><td class="td-ent"><span class="credit-tag">Custom allocation</span></td></tr>
+      <tr class="dreem-row"><td>Image Refining</td><td class="td-core"><span class="credit-tag">500 credits/mo</span></td><td class="td-ent"><span class="credit-tag">Custom allocation</span></td></tr>
+      <tr class="dreem-row"><td>Custom Virtual Talent</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td></tr>
+      <tr class="dreem-row dreem-end-row"><td>Custom Wardrobe</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td></tr>
+
+
+      <tr class="category-row"><td>Reporting</td><td class="td-core"></td><td class="td-ent"></td></tr>
+      <tr><td>Standard &amp; Advanced Reports</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Custom Reports</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Data Analyst Access</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr class="category-row"><td>Support</td><td class="td-core"></td><td class="td-ent"></td></tr>
+      <tr><td>24/5 In-App Chat Support</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Dedicated Account Team</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Onsite Onboarding</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr class="category-row"><td>Security</td><td class="td-core"></td><td class="td-ent"></td></tr>
+      <tr><td>SOC 2 Type II Certification</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>SSO / 2FA</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>IP Allow List</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <div class="faq-inner">
+    <p class="eyebrow">FAQ</p>
+    <h2>Frequently asked questions</h2>
+    <p>Looking for more information? Check out these frequently asked questions about our pricing.</p>
+    <div class="faq-item open" onclick="this.classList.toggle('open')">
+      <div class="faq-question"><h3>Do we need to commit to a minimum subscription length?</h3><span class="faq-toggle">+</span></div>
+      <div class="faq-answer">All plans are on an annual subscription. This gives your team stable access to the full platform and ensures we can provide the dedicated support and onboarding enterprise teams need to succeed.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-question"><h3>What are Dreem AI credits, and how do they work? <span class="new-tag">NEW</span></h3><span class="faq-toggle">+</span></div>
+      <div class="faq-answer">Dreem AI credits are the currency for generating virtual content inside Creative Force. Each AI action — a virtual model image, a packshot, a product video, or an image refinement — uses a specific number of credits. Your monthly credits reset each billing cycle. Unused credits roll over for one month. Need more? Your account team handles it in minutes.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-question"><h3>What's the difference between assets and credits? <span class="new-tag">NEW</span></h3><span class="faq-toggle">+</span></div>
+      <div class="faq-answer">Your platform fee is based on delivered assets — the final images and videos that pass QC and reach your downstream systems. AI credits cover the generation cost of creating virtual content. An AI-generated image that passes QC counts as one delivered asset. You only pay for assets that ship; credits cover the cost of generating them.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-question"><h3>How much does it cost to generate a virtual model image? <span class="new-tag">NEW</span></h3><span class="faq-toggle">+</span></div>
+      <div class="faq-answer">A 2K virtual model image uses 11 credits, costing approximately $0.66 at enterprise annual rates. Traditional on-model photography typically runs $61–$245 per image when you account for talent, studio time, and post-production — meaning virtual production can be 92x–371x cheaper per image.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-question"><h3>Can we increase our credit volume as production scales?</h3><span class="faq-toggle">+</span></div>
+      <div class="faq-answer">Yes. Your account team can expand your credit allocation at any time — no renegotiation required, no downtime. Enterprise customers can also discuss custom volume pricing for large-scale production runs.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-question"><h3>Can we move to a higher plan at any time?</h3><span class="faq-toggle">+</span></div>
+      <div class="faq-answer">Yes. You can upgrade at any time during your subscription. Your account team will handle the transition.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-question"><h3>How do you define assets?</h3><span class="faq-toggle">+</span></div>
+      <div class="faq-answer">An asset is a finalized, delivered output — the image, video, or file that passes QC and is delivered to your downstream systems. Intermediate files, work-in-progress, and rejected shots do not count toward your asset volume.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer CTA -->
+<div class="footer-cta">
+  <p class="eyebrow" style="color:rgba(255,255,255,0.5)">Get started</p>
+  <h2>Explore the AI-driven potential<br>of content production</h2>
+  <p>Transform your studio operations with innovative, AI-powered solutions tailored for the future of content creation.</p>
+  <div class="footer-cta-btns">
+    <button class="btn-white">Talk with us</button>
+    <button class="btn-ghost-white">View case studies</button>
+  </div>
+</div>
+
+
+<!-- Credit Info Panel -->
+<div class="credit-overlay" id="creditOverlay" onclick="this.classList.remove('open');document.getElementById('creditPanel').classList.remove('open');document.querySelectorAll('.credit-info-icon').forEach(el=>el.classList.remove('active'))"></div>
+<div class="credit-panel" id="creditPanel">
+  <div class="credit-panel-header">
+    <div class="credit-panel-header-left">
+      <svg width="28" height="28" viewBox="0 0 584 584" fill="none"><rect width="584" height="584" rx="8" fill="black"/><path d="M391.914 392.882C362.869 421.948 327.082 437 286.108 437H158V221.602L239.429 137H286.108C327.082 137 362.869 151.533 391.914 181.118C420.959 210.183 436 245.997 436 287.519C436 329.042 421.478 363.817 391.914 392.882ZM247.728 229.907V344.093H289.739C305.817 344.093 318.784 338.384 330.194 327.484C341.604 316.066 346.791 303.09 346.791 287C346.791 270.91 341.604 257.934 330.194 246.516C318.784 235.097 305.817 229.907 289.739 229.907C289.739 229.907 248.246 229.907 247.728 229.907ZM236.317 156.723L177.19 218.488H236.317V157.242V156.723ZM236.317 229.907H169.41V417.277L236.317 347.727V229.907ZM383.616 188.903C356.646 161.913 323.97 148.419 286.108 148.419H247.728V218.488H289.22C307.892 218.488 324.489 225.235 337.455 238.73C350.94 252.225 357.683 268.315 357.683 287.519C357.683 306.723 350.94 322.813 337.455 335.789C323.97 348.765 307.892 356.031 289.22 356.031H244.097L177.19 426.1H286.108C323.97 412.606 356.646 412.606 383.616 385.616C410.586 358.626 424.071 325.927 424.071 288.038C424.071 250.149 410.586 215.893 383.616 188.903Z" fill="#37CD7D"/></svg>
+      <div>
+        <div class="credit-panel-eyebrow">Dreem AI Credits</div>
+      </div>
+    </div>
+    <button class="credit-panel-close" onclick="document.getElementById('creditPanel').classList.remove('open');document.getElementById('creditOverlay').classList.remove('open');document.querySelectorAll('.credit-info-icon').forEach(el=>el.classList.remove('active'))">✕</button>
+  </div>
+  <div class="credit-panel-body">
+    <div class="credit-panel-title">How credits work</div>
+    <p class="credit-panel-desc">Each AI generation action in Creative Force consumes a set number of Dreem credits. Credits reset monthly and unused credits roll over for one billing cycle. Your plan includes a base allocation — your account team can increase it at any time.</p>
+
+    <table class="credit-output-table">
+      <thead>
+        <tr>
+          <th>Output type</th>
+          <th>Credits used</th>
+          <th>Cost / output</th>
+          <th>500 cr gets you</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>On-model image (2K)</td>
+          <td class="td-credits">11 cr</td>
+          <td class="td-cost">$0.66</td>
+          <td class="td-output">45 images</td>
+        </tr>
+        <tr>
+          <td>Packshot (2K)</td>
+          <td class="td-credits">8 cr</td>
+          <td class="td-cost">$0.48</td>
+          <td class="td-output">62 images</td>
+        </tr>
+        <tr>
+          <td>5s product video</td>
+          <td class="td-credits">10 cr</td>
+          <td class="td-cost">$0.60</td>
+          <td class="td-output">50 videos</td>
+        </tr>
+        <tr>
+          <td>Image refining</td>
+          <td class="td-credits">4 cr</td>
+          <td class="td-cost">$0.24</td>
+          <td class="td-output">125 edits</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="credit-panel-footer">
+    <p>Traditional on-model photography costs <strong>$61–$245 per image.</strong> At $0.66 per virtual image, Dreem is up to <strong>371x cheaper.</strong></p>
+  </div>
+</div>
+
+</body>
+</html>
