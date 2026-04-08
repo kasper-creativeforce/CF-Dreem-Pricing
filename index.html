@@ -72,6 +72,16 @@
   .ai-intro { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: center; margin-bottom: 60px; }
   .ai-intro-copy { display: flex; flex-direction: column; }
   .ai-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+  .integration-block { margin-top: 40px; padding: 32px; background: rgba(39,65,241,0.08); border: 1px solid rgba(39,65,241,0.35); border-radius: 16px; }
+  .integration-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+  .integration-eyebrow { font-family: 'Space Grotesk',sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6f86ff; padding: 4px 10px; border: 1px solid rgba(111,134,255,0.4); border-radius: 999px; }
+  .integration-header h3 { font-family: 'Space Grotesk',sans-serif; font-size: 20px; font-weight: 600; color: #fcfcfd; margin: 0; }
+  .integration-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+  .integration-item { padding: 18px; border-left: 2px solid rgba(111,134,255,0.4); }
+  .integration-num { font-family: 'Space Grotesk',sans-serif; font-size: 11px; font-weight: 600; color: #6f86ff; letter-spacing: 0.06em; margin-bottom: 8px; }
+  .integration-item h4 { font-family: 'Space Grotesk',sans-serif; font-size: 14px; font-weight: 600; color: #fcfcfd; margin: 0 0 6px; }
+  .integration-item p { font-size: 12px; line-height: 1.5; color: rgba(252,252,253,0.6); margin: 0; }
+  @media (max-width: 900px) { .integration-grid { grid-template-columns: repeat(2,1fr); } }
 
   /* ── DREEM STUDIO MOCKUP ── */
   .dsm { background: #1c1c1c; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; box-shadow: 0 24px 60px rgba(0,0,0,0.6); font-family: 'Inter', sans-serif; }
@@ -454,6 +464,35 @@
         <div class="ai-card-status live">Live</div>
         <h3>Image Refining</h3>
         <p>AI-powered touch-ups and adjustments for quick post-production edits without leaving the platform.</p>
+      </div>
+    </div>
+
+    <div class="integration-block">
+      <div class="integration-header">
+        <span class="integration-eyebrow">Integrated with Creative Force</span>
+        <h3>Built into the workflow you already run</h3>
+      </div>
+      <div class="integration-grid">
+        <div class="integration-item">
+          <div class="integration-num">01</div>
+          <h4>Workflow-triggered sessions</h4>
+          <p>Start virtual shoots directly from your Creative Force production flow.</p>
+        </div>
+        <div class="integration-item">
+          <div class="integration-num">02</div>
+          <h4>Style guide sync</h4>
+          <p>Dreem follows the creative standards you've already set in Creative Force.</p>
+        </div>
+        <div class="integration-item">
+          <div class="integration-num">03</div>
+          <h4>Built-in QC loop</h4>
+          <p>Reject in Creative Force, regenerate in Dreem. No manual handoffs.</p>
+        </div>
+        <div class="integration-item">
+          <div class="integration-num">04</div>
+          <h4>Full asset access</h4>
+          <p>Use your existing product library in Dreem to build styled outfits and looks.</p>
+        </div>
       </div>
     </div>
   </div>
