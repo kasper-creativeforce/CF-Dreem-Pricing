@@ -64,12 +64,35 @@
   .plan-features li { display: flex; align-items: flex-start; gap: 8px; font-size: 15px; color: rgba(255,255,255,0.8); }
   .plan-features li::before { content: ''; display: inline-block; width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; background-color: var(--cf-blue); -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960'%3E%3Cpath d='M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960'%3E%3Cpath d='M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z'/%3E%3C/svg%3E"); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
   .plan-features li::before { content: ''; display: inline-block; width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; background-color: var(--cf-blue); -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960'%3E%3Cpath d='M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960'%3E%3Cpath d='M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z'/%3E%3C/svg%3E"); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; }
-  .ai-section { background: #060606; padding: 80px 0 0; margin: 0; }
+  .ai-section { background: #060606; padding: 80px 0 80px; margin: 0; }
   .ai-section .inner { max-width: 1400px; margin: 0 auto; padding: 0 60px; }
   .ai-section .eyebrow { color: var(--dreem-green-hex); font-family: 'Space Grotesk', sans-serif; }
   .ai-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: 46px; font-weight: 600; letter-spacing: -0.02em; color: var(--dreem-text); margin-bottom: 14px; }
-  .ai-section .subtitle { font-size: 18px; color: var(--dreem-text-muted); max-width: 600px; margin-bottom: 48px; }
+  .ai-section .subtitle { font-size: 17px; color: var(--dreem-text-muted); margin-bottom: 0; line-height: 1.7; }
+  .ai-intro { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: center; margin-bottom: 60px; }
+  .ai-intro-copy { display: flex; flex-direction: column; }
   .ai-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+
+  /* ── DREEM STUDIO MOCKUP ── */
+  .dsm { background: #1c1c1c; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; box-shadow: 0 24px 60px rgba(0,0,0,0.6); font-family: 'Inter', sans-serif; }
+  .dsm-topbar { background: #141414; border-bottom: 1px solid #252525; height: 42px; display: flex; align-items: center; padding: 0 10px; gap: 8px; flex-shrink: 0; }
+  .dsm-logo { width: 28px; height: 28px; border-radius: 8px; background: #1c1c1c; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .dsm-title { font-size: 14px; font-weight: 600; color: #fcfcfd; margin-right: 4px; }
+  .dsm-tab { display: flex; align-items: center; gap: 5px; background: #252525; border: 1px solid #333; border-radius: 6px; padding: 4px 10px; font-size: 11px; color: rgba(252,252,253,0.7); }
+  .dsm-plus { width: 22px; height: 22px; border-radius: 6px; background: #252525; border: 1px solid #333; display: flex; align-items: center; justify-content: center; font-size: 14px; color: rgba(252,252,253,0.5); cursor: pointer; }
+  .dsm-session { font-size: 12px; color: rgba(252,252,253,0.3); flex: 1; }
+  .dsm-credits { display: flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: #fcfcfd; background: #252525; border: 1px solid #333; border-radius: 6px; padding: 4px 10px; }
+  .dsm-credits::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #3ecf6e; display: block; }
+  .dsm-btn-ghost { font-size: 11px; color: rgba(252,252,253,0.6); background: #252525; border: 1px solid #333; border-radius: 6px; padding: 5px 10px; }
+  .dsm-btn-green { font-size: 11px; font-weight: 600; color: #060606; background: #3ecf6e; border-radius: 6px; padding: 5px 12px; }
+  .dsm-body { display: flex; height: 300px; }
+  .dsm-sidebar { width: 46px; background: #0d0d0d; border-right: 1px solid #1e1e1e; display: flex; flex-direction: column; align-items: center; padding: 12px 0; gap: 18px; }
+  .dsm-icon { width: 28px; height: 28px; border-radius: 8px; background: #3ecf6e; display: flex; align-items: center; justify-content: center; }
+  .dsm-icon-dim { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; opacity: 0.3; }
+  .dsm-main { flex: 1; background: #0d0d0d; padding: 20px; display: grid; grid-template-columns: repeat(3,1fr); grid-template-rows: repeat(2,1fr); gap: 10px; }
+  .dsm-card { border-radius: 10px; overflow: hidden; position: relative; cursor: pointer; }
+  .dsm-card-img { width: 100%; height: calc(100% - 32px); display: flex; align-items: center; justify-content: center; }
+  .dsm-card-label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.88); backdrop-filter: blur(4px); padding: 6px 10px; font-size: 11px; font-weight: 500; color: #1a1a1a; text-align: center; }
   .ai-card { background: var(--dreem-surface); border: 1px solid var(--dreem-border); border-radius: var(--dreem-radius); padding: 24px; transition: border-color 0.25s; }
   .ai-card:hover { border-color: var(--dreem-subtle); }
   .ai-card-status { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; display: inline-flex; align-items: center; gap: 5px; }
@@ -344,52 +367,92 @@
 <!-- AI Section -->
 <div class="ai-section">
   <div class="inner">
-    <p class="eyebrow">AI Content Generation · Powered by Dreem</p>
-    <h2>Elevate your studio with<br>AI-powered innovations</h2>
-    <p class="subtitle">Generate virtual content at a fraction of the cost of traditional photography — right inside your Creative Force workflow.</p>
+    <div class="ai-intro">
+      <div class="ai-intro-copy">
+        <p class="eyebrow">AI Content Generation · Powered by Dreem</p>
+        <h2>Elevate your studio with AI-powered innovations</h2>
+        <p class="subtitle">Dreem is Creative Force's built-in AI engine — generate virtual models, packshots, and product videos directly inside your existing workflow, without leaving the platform.</p>
+      </div>
+      <div class="ai-intro-mockup">
+        <div class="dsm">
+          <div class="dsm-topbar">
+            <div class="dsm-logo"><svg width="14" height="14" style="color:#3ecf6e"><use href="#icon-d-credit"/></svg></div>
+            <span class="dsm-title">Studio</span>
+            <div class="dsm-tab"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:rgba(252,252,253,0.5)"><rect x="2" y="3" width="20" height="14" rx="2"/></svg> All Sessions</div>
+            <div class="dsm-plus">+</div>
+            <span class="dsm-session">Session name here</span>
+            <div class="dsm-credits">25</div>
+            <div class="dsm-btn-ghost">Download ∨</div>
+            <div class="dsm-btn-green">Save to Product</div>
+          </div>
+          <div class="dsm-body">
+            <div class="dsm-sidebar">
+              <div class="dsm-icon"><svg width="14" height="14" style="color:#060606"><use href="#icon-d-credit"/></svg></div>
+              <div class="dsm-icon-dim"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fcfcfd" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+              <div class="dsm-icon-dim"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fcfcfd" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+            </div>
+            <div class="dsm-main">
+              <div class="dsm-card" style="border:2px solid rgba(255,255,255,0.25)">
+                <div class="dsm-card-img" style="background:#e8ddc8;height:100%">
+                  <svg viewBox="0 0 80 90" width="55" style="opacity:0.6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 8 Q40 2 50 8 L65 20 L58 26 L55 22 L55 75 L25 75 L25 22 L22 26 L15 20 Z" stroke="#8a7a60" stroke-width="1.5" fill="#d4c9a8"/><line x1="40" y1="2" x2="40" y2="6" stroke="#8a7a60" stroke-width="1.5"/><path d="M36 2 Q40 0 44 2" stroke="#8a7a60" stroke-width="1.5" fill="none"/></svg>
+                </div>
+                <div class="dsm-card-label">Capture from mobile</div>
+              </div>
+              <div class="dsm-card">
+                <div class="dsm-card-img" style="background:#d0d0d0;height:100%">
+                  <svg viewBox="0 0 80 100" width="48" style="opacity:0.55" fill="none"><ellipse cx="40" cy="16" rx="10" ry="12" fill="#b0b0b0"/><path d="M25 28 Q20 32 18 50 L22 50 L24 75 L56 75 L58 50 L62 50 Q60 32 55 28 Q48 24 40 24 Q32 24 25 28Z" fill="#b8b8b8"/><path d="M18 50 L10 52 L12 65 L22 63" stroke="#b0b0b0" stroke-width="1" fill="none"/><path d="M62 50 L70 52 L68 65 L58 63" stroke="#b0b0b0" stroke-width="1" fill="none"/></svg>
+                </div>
+                <div class="dsm-card-label">Mannequin</div>
+              </div>
+              <div class="dsm-card">
+                <div class="dsm-card-img" style="background:#d8d8d8;height:100%">
+                  <svg viewBox="0 0 80 90" width="52" style="opacity:0.45" fill="none"><path d="M25 18 Q20 24 18 45 L22 45 L24 72 L56 72 L58 45 L62 45 Q60 24 55 18 Q48 14 40 14 Q32 14 25 18Z" stroke="#c0c0c0" stroke-width="1.5" fill="rgba(200,200,200,0.3)"/><path d="M18 45 L10 47 L12 60 L22 58" stroke="#c0c0c0" stroke-width="1.5" fill="none"/><path d="M62 45 L70 47 L68 60 L58 58" stroke="#c0c0c0" stroke-width="1.5" fill="none"/></svg>
+                </div>
+                <div class="dsm-card-label">Ghost Mannequin</div>
+              </div>
+              <div class="dsm-card">
+                <div class="dsm-card-img" style="background:#b8b0a0;height:100%">
+                  <svg viewBox="0 0 80 100" width="44" style="opacity:0.7" fill="none"><ellipse cx="40" cy="14" rx="9" ry="10" fill="#7a6a58"/><rect x="32" y="24" width="16" height="40" rx="2" fill="#6a5a48"/><rect x="20" y="24" width="13" height="28" rx="2" fill="#7a6a58"/><rect x="47" y="24" width="13" height="28" rx="2" fill="#7a6a58"/><rect x="30" y="64" width="10" height="22" rx="2" fill="#6a5a48"/><rect x="40" y="64" width="10" height="22" rx="2" fill="#6a5a48"/></svg>
+                </div>
+                <div class="dsm-card-label">On Model</div>
+              </div>
+              <div class="dsm-card">
+                <div class="dsm-card-img" style="background:#c8c8c8;height:100%">
+                  <svg viewBox="0 0 90 70" width="60" style="opacity:0.5" fill="none"><path d="M15 20 Q10 25 10 35 L10 55 L80 55 L80 35 Q80 25 75 20 L60 15 Q55 10 45 10 Q35 10 30 15 Z" fill="#aaaaaa"/></svg>
+                </div>
+                <div class="dsm-card-label">Flat-lay</div>
+              </div>
+              <div class="dsm-card">
+                <div class="dsm-card-img" style="background:#ebebeb;height:100%">
+                  <svg viewBox="0 0 80 90" width="52" style="opacity:0.6" fill="none"><path d="M25 18 Q20 24 18 45 L22 45 L24 72 L56 72 L58 45 L62 45 Q60 24 55 18 Q48 14 40 14 Q32 14 25 18Z" stroke="#999" stroke-width="1.2" fill="none" stroke-dasharray="0"/><path d="M18 45 L10 47 L12 60 L22 58" stroke="#999" stroke-width="1.2" fill="none"/><path d="M62 45 L70 47 L68 60 L58 58" stroke="#999" stroke-width="1.2" fill="none"/><path d="M30 72 L30 82 M50 72 L50 82" stroke="#999" stroke-width="1.2"/><circle cx="40" cy="14" r="6" stroke="#999" stroke-width="1.2" fill="none"/></svg>
+                </div>
+                <div class="dsm-card-label">Sketch / CAD</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="ai-grid">
       <div class="ai-card">
         <div class="ai-card-status live">Live</div>
         <h3>Virtual Models</h3>
         <p>Generate on-model product images with 400+ virtual talent options. No physical samples, no studio booking.</p>
-        <div class="ai-card-price">$0.66 <span>/ image (2K)</span></div>
-        <hr class="ai-card-divider">
-        <div class="credit-detail"><span>Credits per image</span><strong>11 credits</strong></div>
-        <div class="credit-detail" style="margin-top:4px"><span>vs. traditional</span><strong style="color:#3ecf6e">92x cheaper</strong></div>
       </div>
       <div class="ai-card">
         <div class="ai-card-status live">Live</div>
-        <h3>Packshots</h3>
+        <h3>Product Shots</h3>
         <p>Create product images on clean backgrounds instantly. Perfect for catalog consistency at scale.</p>
-        <div class="ai-card-price">$0.48 <span>/ image (2K)</span></div>
-        <hr class="ai-card-divider">
-        <div class="credit-detail"><span>Credits per image</span><strong>8 credits</strong></div>
-        <div class="credit-detail" style="margin-top:4px"><span>vs. traditional</span><strong style="color:#3ecf6e">52x–167x cheaper</strong></div>
       </div>
       <div class="ai-card">
         <div class="ai-card-status live">Live</div>
         <h3>Image-to-Video</h3>
         <p>Transform any product image into a 5 or 10-second product video. No video crew required.</p>
-        <div class="ai-card-price">$0.60 <span>/ 5s video</span></div>
-        <hr class="ai-card-divider">
-        <div class="credit-detail"><span>Credits per 5s video</span><strong>10 credits</strong></div>
-        <div class="credit-detail" style="margin-top:4px"><span>vs. traditional</span><strong style="color:#3ecf6e">833x cheaper</strong></div>
       </div>
       <div class="ai-card">
         <div class="ai-card-status live">Live</div>
         <h3>Image Refining</h3>
         <p>AI-powered touch-ups and adjustments for quick post-production edits without leaving the platform.</p>
-        <div class="ai-card-price">$0.24 <span>/ edit</span></div>
-        <hr class="ai-card-divider">
-        <div class="credit-detail"><span>Credits per edit</span><strong>4 credits</strong></div>
-        <div class="credit-detail" style="margin-top:4px"><span>Instant post-production</span><strong style="color:#3ecf6e">No outsourcing</strong></div>
-      </div>
-    </div>
-    <div class="ai-grid" style="margin-top:12px">
-      <div class="ai-card" style="grid-column:1/2;opacity:0.5">
-        <div class="ai-card-status dev">In development</div>
-        <h3>Color Variations</h3>
-        <p>Produce accurate and consistent color variations across your product catalog automatically.</p>
       </div>
     </div>
   </div>
@@ -433,13 +496,13 @@
       <tr><td>Cloud Platform &amp; Storage</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
       <tr><td>Production DAM</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
       <tr><td>Auto Variants</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
-      <tr><td>Conditional Workflow Rules</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
-      <tr><td>Derived Workflows <span class="new-tag">NEW</span></td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
-      <tr><td>AI Cloud Automation <span class="new-tag">NEW</span></td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Conditional Workflow Rules</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Derived Workflows <span class="new-tag">NEW</span></td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>AI Cloud Automation <span class="new-tag">NEW</span></td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
       <tr class="category-row"><td>Planning &amp; Sample Management</td><td class="td-core"></td><td class="td-ent"></td></tr>
       <tr><td>Planning Calendar &amp; Swimlanes</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
       <tr><td>Sample Check-In / Check-Out</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
-      <tr><td>Talent Resourcing &amp; Booking <span class="new-tag">NEW</span></td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Talent Resourcing &amp; Booking <span class="new-tag">NEW</span></td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
 
       <!-- Dreem AI Block -->
       <tr class="dreem-header-row">
@@ -458,22 +521,22 @@
       <tr class="dreem-row"><td>Product Tagging</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td></tr>
       <tr class="dreem-row"><td>Label Recognition</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td></tr>
       <tr class="dreem-row"><td>Virtual Models (2K)</td><td class="td-core"><span class="credit-tag">2,000 credits/mo</span></td><td class="td-ent"><span class="credit-tag">Custom allocation</span></td></tr>
-      <tr class="dreem-row"><td>Virtual Models (4K)</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td></tr>
+      <tr class="dreem-row"><td>Virtual Models (4K)</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td></tr>
       <tr class="dreem-row"><td>Packshots</td><td class="td-core"><span class="credit-tag">2,000 credits/mo</span></td><td class="td-ent"><span class="credit-tag">Custom allocation</span></td></tr>
       <tr class="dreem-row"><td>Image-to-Video</td><td class="td-core"><span class="credit-tag">2,000 credits/mo</span></td><td class="td-ent"><span class="credit-tag">Custom allocation</span></td></tr>
       <tr class="dreem-row"><td>Image Refining</td><td class="td-core"><span class="credit-tag">2,000 credits/mo</span></td><td class="td-ent"><span class="credit-tag">Custom allocation</span></td></tr>
-      <tr class="dreem-row"><td>Custom Virtual Talent</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td></tr>
-      <tr class="dreem-row dreem-end-row"><td>Custom Wardrobe</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td></tr>
+      <tr class="dreem-row"><td>Custom Virtual Talent</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td></tr>
+      <tr class="dreem-row dreem-end-row"><td>Custom Wardrobe</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#3ecf6e"/></svg></td></tr>
 
 
       <tr class="category-row"><td>Reporting</td><td class="td-core"></td><td class="td-ent"></td></tr>
       <tr><td>Standard &amp; Advanced Reports</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
-      <tr><td>Custom Reports</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
-      <tr><td>Data Analyst Access</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Custom Reports</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Data Analyst Access</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
       <tr class="category-row"><td>Support</td><td class="td-core"></td><td class="td-ent"></td></tr>
       <tr><td>24/5 In-App Chat Support</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
-      <tr><td>Dedicated Account Team</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
-      <tr><td>Onsite Onboarding</td><td class="td-core"><span class="cross">–</span></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Dedicated Account Team</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
+      <tr><td>Onsite Onboarding</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
       <tr class="category-row"><td>Security</td><td class="td-core"></td><td class="td-ent"></td></tr>
       <tr><td>SOC 2 Type II Certification</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
       <tr><td>SSO / 2FA</td><td class="td-core"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td><td class="td-ent"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" fill="#2741f1"/></svg></td></tr>
