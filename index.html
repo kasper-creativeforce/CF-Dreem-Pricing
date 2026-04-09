@@ -199,17 +199,19 @@
   .credit-tag { display: inline-block; background: rgba(62,207,110,0.12); color: #3ecf6e; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 6px; font-family: 'Space Grotesk', sans-serif; border: 1px solid rgba(62,207,110,0.25); }
   .new-tag { display: inline-block; background: var(--cf-blue); color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; vertical-align: middle; margin-left: 6px; }
   .dev-tag { display: inline-block; background: rgba(252,252,253,0.08); color: rgba(252,252,253,0.35); font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; vertical-align: middle; margin-left: 6px; }
-  .faq-section { background: #f3f3f8; padding: 80px 60px; }
-  .faq-inner { max-width: 860px; margin: 0 auto; }
-  .faq-inner h2 { font-size: 38px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; }
-  .faq-inner > p { font-size: 16px; color: rgba(27,26,61,0.6); margin-bottom: 48px; }
-  .faq-item { border-bottom: 1px solid rgba(27,26,61,0.08); padding: 24px 0; cursor: pointer; }
-  .faq-item:first-of-type { border-top: 1px solid rgba(27,26,61,0.08); }
+  .faq-section { background: #f3f3f8; padding: 120px 60px; }
+  .faq-inner { max-width: 1400px; margin: 0 auto; }
+  .faq-inner h2 { font-size: 46px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 16px; color: var(--cf-navy); }
+  .faq-inner > p { font-size: 19px; color: rgba(27,26,61,0.6); margin-bottom: 56px; }
+  .faq-item { border-bottom: 1px solid rgba(27,26,61,0.15); padding: 30px 0; cursor: pointer; }
+  .faq-item:first-of-type { border-top: 1px solid rgba(27,26,61,0.15); }
   .faq-question { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-  .faq-question h3 { font-size: 16px; font-weight: 600; color: var(--cf-navy); }
-  .faq-toggle { color: var(--cf-blue); font-size: 20px; flex-shrink: 0; font-weight: 300; transition: transform 0.2s; }
-  .faq-answer { font-size: 15px; color: rgba(27,26,61,0.65); line-height: 1.65; margin-top: 14px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-  .faq-item.open .faq-answer { max-height: 300px; }
+  .faq-question h3 { font-size: 19px; font-weight: 500; color: var(--cf-navy); }
+  .faq-toggle { flex-shrink: 0; transition: transform 0.3s ease; }
+  .faq-toggle svg { display: block; }
+  .faq-toggle svg path { stroke: var(--cf-navy); stroke-width: 1.5; }
+  .faq-answer { font-size: 19px; color: var(--cf-navy); line-height: 1.5; max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .faq-item.open .faq-answer { max-height: 500px; padding-bottom: 30px; }
   .faq-item.open .faq-toggle { transform: rotate(45deg); }
   .footer-cta { background: linear-gradient(115deg, var(--cf-navy), #040087, var(--cf-blue)); padding: 80px 60px; text-align: center; color: white; }
   .footer-cta h2 { font-size: 42px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 16px; }
@@ -489,7 +491,7 @@
       <div class="ai-card">
         <div class="ai-card-status live">Live</div>
         <h3>Virtual Models</h3>
-        <p>Generate on-model product images with 400+ virtual talent options. No physical samples, no studio booking.</p>
+        <p>Scale your talent roster to 400+ virtual models and multiply your studio's on-model output without adding headcount.</p>
       </div>
       <div class="ai-card">
         <div class="ai-card-status live">Live</div>
@@ -499,7 +501,7 @@
       <div class="ai-card">
         <div class="ai-card-status live">Live</div>
         <h3>Image-to-Video</h3>
-        <p>Transform any product image into a 5 or 10-second product video. No video crew required.</p>
+        <p>Turn any product image into a 5 or 10-second video — 10x your video output from the content you already shoot.</p>
       </div>
       <div class="ai-card">
         <div class="ai-card-status live">Live</div>
@@ -656,46 +658,45 @@
 <!-- FAQ -->
 <div class="faq-section">
   <div class="faq-inner">
-    <p class="eyebrow">FAQ</p>
-    <h2>Frequently asked questions</h2>
+    <h2>Frequently asked questions.</h2>
     <p>Looking for more information? Check out these frequently asked questions about our pricing.</p>
 
     <div class="faq-item open" onclick="this.classList.toggle('open')">
-      <div class="faq-question"><h3>Do we need to commit to a minimum contract length?</h3><span class="faq-toggle">+</span></div>
+      <div class="faq-question"><h3>Do we need to commit to a minimum contract length?</h3><span class="faq-toggle"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 1L11 21"/><path d="M21 11L1 11"/></svg></span></div>
       <div class="faq-answer">Our standard contract requires a 12-month commitment. This gives you steady, reliable access to all our tools and support. It also allows us to work closely with your team, understand your needs, and adapt as your business grows over time.</div>
     </div>
     <div class="faq-item" onclick="this.classList.toggle('open')">
-      <div class="faq-question"><h3>What if we need to upgrade/downgrade our plan?</h3><span class="faq-toggle">+</span></div>
+      <div class="faq-question"><h3>What if we need to upgrade/downgrade our plan?</h3><span class="faq-toggle"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 1L11 21"/><path d="M21 11L1 11"/></svg></span></div>
       <div class="faq-answer">Your commitment to a specific plan and number of assets is locked for the duration of the contract period. However, you can always purchase additional assets as needed, benefiting from a tiered pricing structure where the cost per asset decreases with higher volumes.<br><br>Downgrades to a lower plan are not available during the active subscription period. However, at each contract renewal, you have the option to adjust your commitment by selecting a lower plan with fewer assets. This ensures flexibility in scaling up as needed while maintaining clarity and consistency in your contracted commitment.</div>
     </div>
     <div class="faq-item" onclick="this.classList.toggle('open')">
-      <div class="faq-question"><h3>Can we switch to a higher plan at any time?</h3><span class="faq-toggle">+</span></div>
+      <div class="faq-question"><h3>Can we switch to a higher plan at any time?</h3><span class="faq-toggle"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 1L11 21"/><path d="M21 11L1 11"/></svg></span></div>
       <div class="faq-answer">Of course! You can upgrade your plan anytime. We'll refund the unused part of your current plan, so you only pay for the time you used the lower plan. This makes switching to a higher tier at a lower cost easy. Upgrading is simple, fast, and designed to support your growing needs.</div>
     </div>
     <div class="faq-item" onclick="this.classList.toggle('open')">
-      <div class="faq-question"><h3>Do you offer a free trial?</h3><span class="faq-toggle">+</span></div>
+      <div class="faq-question"><h3>Do you offer a free trial?</h3><span class="faq-toggle"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 1L11 21"/><path d="M21 11L1 11"/></svg></span></div>
       <div class="faq-answer">We don't offer a free trial, but we do provide personalized demos to show how Creative Force fits your needs. Our team will walk you through our platform, highlighting the features most relevant to your business and answer any questions you might have. To learn more about how Creative Force can help your business, book a demo with one of our experts.</div>
     </div>
     <div class="faq-item" onclick="this.classList.toggle('open')">
-      <div class="faq-question"><h3>How do you define assets?</h3><span class="faq-toggle">+</span></div>
+      <div class="faq-question"><h3>How do you define assets?</h3><span class="faq-toggle"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 1L11 21"/><path d="M21 11L1 11"/></svg></span></div>
       <div class="faq-answer">We define an asset as the output of the last step in a workflow. This ensures that only finalized and delivered outputs are counted — regardless of the number of intermediate steps or reworks. For example, if your team manages a photography project and uploads 100 raw images during the capture stage, but only 10 are selected for post-production and final delivery, only the 10 delivered images are counted as assets. (Remember, we estimate price based on the number of final assets your team projects it will deliver annually.)</div>
     </div>
 
     <!-- Dreem & AI Credits -->
     <div class="faq-item" onclick="this.classList.toggle('open')">
-      <div class="faq-question"><h3>What are Dreem AI credits, and how do they work? <span class="new-tag">NEW</span></h3><span class="faq-toggle">+</span></div>
+      <div class="faq-question"><h3>What are Dreem AI credits, and how do they work? <span class="new-tag">NEW</span></h3><span class="faq-toggle"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 1L11 21"/><path d="M21 11L1 11"/></svg></span></div>
       <div class="faq-answer">Dreem AI credits are the currency for generating virtual content inside Creative Force. Each AI action — a virtual model image, a packshot, a product video, or an image refinement — uses a specific number of credits. Credits are purchased separately from your CF plan as an annual add-on, with a custom commitment matched to your expected volume. Price per credit ranges from $0.16 down to $0.06, scaling with the volume you commit to. Billing is consolidated with your existing Creative Force agreement.</div>
     </div>
     <div class="faq-item" onclick="this.classList.toggle('open')">
-      <div class="faq-question"><h3>What's the difference between assets and credits? <span class="new-tag">NEW</span></h3><span class="faq-toggle">+</span></div>
+      <div class="faq-question"><h3>What's the difference between assets and credits? <span class="new-tag">NEW</span></h3><span class="faq-toggle"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 1L11 21"/><path d="M21 11L1 11"/></svg></span></div>
       <div class="faq-answer">Your CF platform fee is based on delivered assets — the final images and videos that pass QC and reach your downstream systems. Dreem credits are a separate add-on that covers the generation cost of virtual content. The two are billed together on your CF agreement, but priced independently: you pay for the assets that ship, and you commit to the credit volume you expect to consume.</div>
     </div>
     <div class="faq-item" onclick="this.classList.toggle('open')">
-      <div class="faq-question"><h3>How much does it cost to generate a virtual model image? <span class="new-tag">NEW</span></h3><span class="faq-toggle">+</span></div>
+      <div class="faq-question"><h3>How much does it cost to generate a virtual model image? <span class="new-tag">NEW</span></h3><span class="faq-toggle"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 1L11 21"/><path d="M21 11L1 11"/></svg></span></div>
       <div class="faq-answer">A 2K virtual model image uses 11 credits. At the enterprise volume rate of $0.06/credit that's $0.66 per image; at the entry rate of $0.16/credit it's $1.76. Traditional on-model photography typically runs $61–$245 per image when you account for talent, studio time, and post-production — meaning virtual production is dramatically cheaper at every commitment tier.</div>
     </div>
     <div class="faq-item" onclick="this.classList.toggle('open')">
-      <div class="faq-question"><h3>Can we increase our credit volume as production scales? <span class="new-tag">NEW</span></h3><span class="faq-toggle">+</span></div>
+      <div class="faq-question"><h3>Can we increase our credit volume as production scales? <span class="new-tag">NEW</span></h3><span class="faq-toggle"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 1L11 21"/><path d="M21 11L1 11"/></svg></span></div>
       <div class="faq-answer">Yes. Credits are purchased through the standard CF add-on process, and your account team can expand your annual commitment at any time — no renegotiation required, no downtime. Larger commitments unlock better per-credit pricing.</div>
     </div>
   </div>
