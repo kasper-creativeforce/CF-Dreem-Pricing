@@ -46,13 +46,13 @@
   .plan-card-hr { border: none; border-top: 1px solid rgba(27,26,61,0.1); margin: 0; }
   .plan-price-row { display: flex; align-items: center; gap: 14px; padding: 14px 0; }
   .plan-price-row .amount { font-size: 42px; font-weight: 600; letter-spacing: -0.025em; color: var(--cf-navy); line-height: 1; flex-shrink: 0; }
-  .plan-price-desc { font-size: 13px; color: rgba(27,26,61,0.45); line-height: 1.4; white-space: nowrap; }
+  .plan-price-desc { font-size: 13px; color: rgba(27,26,61,0.45); line-height: 1.5; }
   .plan-billing-note { font-size: 13px; color: rgba(27,26,61,0.5); padding: 12px 0 16px; }
   .dreem-callout { background: #0a0a0a; border: 1px solid var(--dreem-border); border-radius: 14px; padding: 16px 18px; margin: 4px 0 16px; position: relative; overflow: hidden; }
-  .dreem-included { display: flex; align-items: center; gap: 10px; padding: 16px 22px; background: #0a0a0a; border-radius: 0 0 var(--cf-radius-card) var(--cf-radius-card); cursor: pointer; transition: background 0.15s; }
+  .dreem-included { display: flex; align-items: center; gap: 12px; padding: 18px 24px; background: #0a0a0a; border-radius: 0 0 var(--cf-radius-card) var(--cf-radius-card); cursor: pointer; transition: background 0.15s; }
   .dreem-included:hover { background: #111; }
-  .dreem-included-label { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; color: #fcfcfd; }
-  .dreem-included-sub { font-size: 11px; color: rgba(252,252,253,0.45); }
+  .dreem-included-label { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: #fcfcfd; white-space: nowrap; }
+  .dreem-included-sub { font-size: 12px; color: rgba(252,252,253,0.45); white-space: nowrap; }
   .dreem-included-badge { background: #3ecf6e; color: #060606; font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; margin-left: auto; }
   .dreem-callout::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--dreem-green-hex), transparent); }
   .dreem-callout-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
@@ -308,12 +308,14 @@
     <div class="plan-card-body">
       <h2>Core</h2>
       <p class="plan-tagline">Start with the essentials. Scale as your production grows.</p>
+      <p class="plan-price-label">Starting at</p>
       <hr class="plan-card-hr">
       <div class="plan-price-row">
         <span class="amount">$3,165</span>
-        <span class="plan-price-desc">Starting at · per month, billed annually</span>
+        <span class="plan-price-desc">Platform fee +<br>asset volume</span>
       </div>
       <hr class="plan-card-hr">
+      <p class="plan-billing-note">Per month, billed annually</p>
       <a href="#" class="plan-btn plan-btn-primary">Get a quote</a>
     </div>
     <div class="dreem-included" onclick="document.getElementById('ai-section').scrollIntoView({behavior:'smooth'})">
@@ -342,9 +344,9 @@
       <hr class="plan-card-hr">
       <div class="plan-price-row">
         <span class="amount">Custom</span>
-        <span class="plan-price-desc">Billed annually</span>
       </div>
       <hr class="plan-card-hr">
+      <p class="plan-billing-note">Billed annually</p>
       <a href="#" class="plan-btn plan-btn-primary">Talk to sales</a>
     </div>
     <div class="dreem-included" onclick="document.getElementById('ai-section').scrollIntoView({behavior:'smooth'})">
