@@ -22,14 +22,18 @@
   .hero-wrapper { background: linear-gradient(180deg, #1b1a3d 0%, #040087 100%); }
   .internal-banner { background: rgba(0,0,0,0.25); color: rgba(255,255,255,0.75); text-align: center; padding: 10px 20px; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .internal-banner span { color: #f5c842; margin-right: 6px; }
-  nav { background: transparent; padding: 20px 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); }
-  .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 17px; color: #fff; text-decoration: none; }
-  .nav-links { display: flex; gap: 28px; }
-  .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 15px; }
-  .nav-links a.active { color: #fff; font-weight: 500; }
-  .nav-cta { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.25); border-radius: var(--cf-radius-btn); padding: 0.7em 1.6em; font-size: 14px; font-weight: 500; cursor: pointer; font-family: 'Inter', sans-serif; backdrop-filter: blur(8px); }
-  .nav-dreem-cta { display: inline-flex; align-items: center; gap: 7px; background: rgba(0,0,0,0.35); color: #fcfcfd; border: 1px solid rgba(62,207,110,0.45); border-radius: var(--cf-radius-btn); padding: 0.7em 1.4em; font-size: 14px; font-weight: 500; cursor: pointer; font-family: 'Space Grotesk', sans-serif; text-decoration: none; transition: all 0.2s; backdrop-filter: blur(8px); }
-  .nav-dreem-cta:hover { border-color: rgba(62,207,110,0.8); }
+  nav { background: transparent; padding: 16px 48px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); }
+  .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 17px; color: #fff; text-decoration: none; flex-shrink: 0; }
+  .nav-links { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 999px; padding: 6px 8px; }
+  .nav-links a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 13px; font-weight: 500; padding: 7px 16px; border-radius: 999px; transition: all 0.15s; letter-spacing: 0.02em; text-transform: uppercase; }
+  .nav-links a:hover { color: rgba(255,255,255,0.85); }
+  .nav-links a.active { color: #fff; font-weight: 600; background: rgba(255,255,255,0.1); }
+  .nav-login { color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; text-decoration: none; padding: 8px 16px; cursor: pointer; font-family: 'Inter', sans-serif; transition: color 0.15s; text-transform: uppercase; letter-spacing: 0.02em; background: none; border: none; }
+  .nav-login:hover { color: #fff; }
+  .nav-cta { background: var(--cf-blue); color: #fff; border: none; border-radius: 8px; padding: 10px 20px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.02em; transition: background 0.15s; }
+  .nav-cta:hover { background: #1f33d4; }
+  .nav-dreem-cta { display: inline-flex; align-items: center; gap: 7px; background: rgba(0,0,0,0.4); color: #fcfcfd; border: 1px solid rgba(62,207,110,0.45); border-radius: 8px; padding: 9px 16px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: 'Space Grotesk', sans-serif; text-decoration: none; transition: all 0.2s; letter-spacing: 0.02em; }
+  .nav-dreem-cta:hover { border-color: rgba(62,207,110,0.8); background: rgba(62,207,110,0.08); }
   .pricing-hero { text-align: center; padding: 60px 60px 0; max-width: 1400px; margin: 0 auto; }
   .eyebrow { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--cf-blue); margin-bottom: 16px; }
   .pricing-hero .eyebrow { color: rgba(255,255,255,0.55); }
@@ -282,11 +286,12 @@
       </svg>
   </a>
   <div class="nav-links">
-    <a href="#">Product</a><a href="#">Solutions</a><a href="#">Customers</a>
-    <a href="#" class="active">Pricing</a><a href="#">Resources</a>
+    <a href="#">Platform +</a><a href="#">Solutions +</a><a href="#">Resources +</a><a href="#">AI</a>
+    <a href="#" class="active">Pricing</a>
   </div>
-  <div style="display:flex;align-items:center;gap:10px">
-    <button class="nav-cta">Talk to sales</button>
+  <div style="display:flex;align-items:center;gap:8px">
+    <button class="nav-login">Login</button>
+    <button class="nav-cta">Book a demo</button>
     <a href="https://dreem.ai" target="_blank" class="nav-dreem-cta">
       <svg width="14" height="14" viewBox="0 0 584 584" fill="none"><rect width="584" height="584" rx="40" fill="black"/><path d="M391.914 392.882C362.869 421.948 327.082 437 286.108 437H158V221.602L239.429 137H286.108C327.082 137 362.869 151.533 391.914 181.118C420.959 210.183 436 245.997 436 287.519C436 329.042 421.478 363.817 391.914 392.882ZM247.728 229.907V344.093H289.739C305.817 344.093 318.784 338.384 330.194 327.484C341.604 316.066 346.791 303.09 346.791 287C346.791 270.91 341.604 257.934 330.194 246.516C318.784 235.097 305.817 229.907 289.739 229.907C289.739 229.907 248.246 229.907 247.728 229.907ZM236.317 156.723L177.19 218.488H236.317V157.242V156.723ZM236.317 229.907H169.41V417.277L236.317 347.727V229.907ZM383.616 188.903C356.646 161.913 323.97 148.419 286.108 148.419H247.728V218.488H289.22C307.892 218.488 324.489 225.235 337.455 238.73C350.94 252.225 357.683 268.315 357.683 287.519C357.683 306.723 350.94 322.813 337.455 335.789C323.97 348.765 307.892 356.031 289.22 356.031H244.097L177.19 426.1H286.108C323.97 412.606 356.646 412.606 383.616 385.616C410.586 358.626 424.071 325.927 424.071 288.038C424.071 250.149 410.586 215.893 383.616 188.903Z" fill="#37CD7D"/></svg>
       Explore Dreem
